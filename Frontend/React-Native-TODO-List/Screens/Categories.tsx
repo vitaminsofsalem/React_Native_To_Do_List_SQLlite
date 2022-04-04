@@ -7,17 +7,38 @@ import {
   TouchableOpacity,
   ScrollView,
 } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Card from "../Components/Card";
 
 export default function Categories() {
+  const [catList, setCatList] = useState<any>([]);
+
+  const handlePress = () => {
+    setCatList(
+      catList.concat(
+        <TouchableOpacity
+          style={{
+            height: "33%",
+            width: "85%",
+            padding: 10,
+            marginTop: 20,
+            borderRadius: 35,
+          }}
+        >
+          <Card key={catList.length} color={Math.floor(Math.random() * 4)} />
+        </TouchableOpacity>
+      )
+    );
+  };
   return (
     <SafeAreaView style={styles.statusbar}>
       <View style={styles.Container}>
-        <Card />
-
-        <TouchableOpacity style={[styles.button, styles.shadow]}>
+        {catList}
+        <TouchableOpacity
+          style={[styles.button, styles.shadow]}
+          onPress={handlePress}
+        >
           <Text style={styles.buttonTxt}>+</Text>
         </TouchableOpacity>
       </View>
@@ -28,8 +49,7 @@ export default function Categories() {
 const styles = StyleSheet.create({
   Container: {
     flex: 1,
-    paddingTop: 20,
-    justifyContent: "flex-start",
+    justifyContent: "center",
     alignItems: "center",
   },
   statusbar: {
