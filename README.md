@@ -1,6 +1,6 @@
 # React_Native_To_Do_List_SQLlite
 
-<p align="center"> </p>
+<p align="center">
 <img src="https://user-images.githubusercontent.com/74866082/161680150-9e3df8c1-dae1-4f12-a002-4c778c302887.jpg" width="300">
 </p>
 
