@@ -34,7 +34,6 @@ export default function Categories() {
   return (
     <SafeAreaView style={styles.statusbar}>
       <View style={styles.Container}>
-        {catList}
         <TouchableOpacity
           style={[styles.button, styles.shadow]}
           onPress={handlePress}
